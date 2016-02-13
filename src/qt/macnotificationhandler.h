@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 #ifndef MACNOTIFICATIONHANDLER_H
 #define MACNOTIFICATIONHANDLER_H
+=======
+// Copyright (c) 2011-2013 The Bitcoin developers
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+#ifndef BITCOIN_QT_MACNOTIFICATIONHANDLER_H
+#define BITCOIN_QT_MACNOTIFICATIONHANDLER_H
+
+>>>>>>> d1691e599121d643db2c1f2b5f5529eb64f2a771
 #include <QObject>
 
 /** Macintosh-specific notification handler (supports UserNotificationCenter and Growl).
@@ -22,4 +32,8 @@ public:
 };
 
 
+<<<<<<< HEAD
 #endif // MACNOTIFICATIONHANDLER_H
+=======
+#endif // BITCOIN_QT_MACNOTIFICATIONHANDLER_H
+>>>>>>> d1691e599121d643db2c1f2b5f5529eb64f2a771

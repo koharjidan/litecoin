@@ -1,9 +1,13 @@
 Building Litecoin
 
+<<<<<<< HEAD
 See doc/readme-qt.rst for instructions on building Litecoin-Qt,
 the intended-for-end-users, nice-graphical-interface, reference
 implementation of Litecoin.
 
 See doc/build-*.txt for instructions on building litecoind,
+=======
+See doc/build-*.md for instructions on building bitcoind,
+>>>>>>> d1691e599121d643db2c1f2b5f5529eb64f2a771
 the intended-for-services, no-graphical-interface, reference
 implementation of Litecoin.

@@ -2,16 +2,31 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+<<<<<<< HEAD
 #ifndef WALLETFRAME_H
 #define WALLETFRAME_H
+=======
+#ifndef BITCOIN_QT_WALLETFRAME_H
+#define BITCOIN_QT_WALLETFRAME_H
+>>>>>>> d1691e599121d643db2c1f2b5f5529eb64f2a771
 
 #include <QFrame>
+#include <QMap>
 
 class BitcoinGUI;
 class ClientModel;
+class SendCoinsRecipient;
 class WalletModel;
+<<<<<<< HEAD
 class WalletStack;
 class WalletView;
+=======
+class WalletView;
+
+QT_BEGIN_NAMESPACE
+class QStackedWidget;
+QT_END_NAMESPACE
+>>>>>>> d1691e599121d643db2c1f2b5f5529eb64f2a771
 
 class WalletFrame : public QFrame
 {
@@ -25,17 +40,22 @@ public:
 
     bool addWallet(const QString& name, WalletModel *walletModel);
     bool setCurrentWallet(const QString& name);
-
+    bool removeWallet(const QString &name);
     void removeAllWallets();
 
-    bool handleURI(const QString &uri);
+    bool handlePaymentRequest(const SendCoinsRecipient& recipient);
 
     void showOutOfSyncWarning(bool fShow);
 
 private:
+    QStackedWidget *walletStack;
     BitcoinGUI *gui;
     ClientModel *clientModel;
-    WalletStack *walletStack;
+    QMap<QString, WalletView*> mapWalletViews;
+
+    bool bOutOfSync;
+
+    WalletView *currentWalletView();
 
     WalletView *currentWalletView();
 
@@ -44,8 +64,6 @@ public slots:
     void gotoOverviewPage();
     /** Switch to history (transactions) page */
     void gotoHistoryPage();
-    /** Switch to address book page */
-    void gotoAddressBookPage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
@@ -65,11 +83,14 @@ public slots:
     /** Ask for passphrase to unlock wallet temporarily */
     void unlockWallet();
 
-    /** Set the encryption status as shown in the UI.
-     @param[in] status            current encryption status
-     @see WalletModel::EncryptionStatus
-     */
-    void setEncryptionStatus();
+    /** Show used sending addresses */
+    void usedSendingAddresses();
+    /** Show used receiving addresses */
+    void usedReceivingAddresses();
 };
 
+<<<<<<< HEAD
 #endif // WALLETFRAME_H
+=======
+#endif // BITCOIN_QT_WALLETFRAME_H
+>>>>>>> d1691e599121d643db2c1f2b5f5529eb64f2a771
